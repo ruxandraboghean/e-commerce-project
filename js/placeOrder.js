@@ -1,10 +1,9 @@
-import { removeAll } from "./removeEntireCart.js";
+import { removeAll } from "./removeAll.js";
 
-export function placeOrder() {
-    let placeOrderButton = document.querySelector('#placeOrder');
+let placeOrderButton = document.querySelector("#placeOrder");
+console.log(placeOrderButton, "order");
 
-    placeOrderButton.addEventListener("click", () => {
-        removeAll();
-        alert('The order has been placed');
-    })
-}
+placeOrderButton.addEventListener("click", () => {
+  removeAll();
+  alert("The order has been placed");
+});

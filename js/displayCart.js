@@ -1,28 +1,26 @@
 export function displayCart() {
-    let cartItems           = localStorage.getItem('paintingsInCart');
-    let productContainer    = document.querySelector('.products');
-    let cartCost            = localStorage.getItem('totalCost');
-    let productHeader       = document.querySelector('.product-header-cart');
-    cartItems               = JSON.parse(cartItems);
+  let cartItems = localStorage.getItem("paintingsInCart");
+  let productContainer = document.querySelector(".products");
+  let cartCost = localStorage.getItem("totalCost");
+  let productHeader = document.querySelector(".product-header-cart");
+  cartItems = JSON.parse(cartItems);
 
+  if (cartItems && productContainer) {
+    if (cartItems.length !== 0) {
+      productContainer.innerHTML = "";
+      productHeader.innerHTML = "";
 
-    if(cartItems && productContainer) {
-        if(cartItems.length !== 0)
-        {
-            productContainer.innerHTML  = '';
-            productHeader.innerHTML     = '';
-
-            productHeader.innerHTML += `
+      productHeader.innerHTML += `
             <div class="product-header">
                 <h5 class="product-name">Product Name</h5>
                 <h5 class="product-price-cart">Price</h5>
                 <h5 class="quantity">Quantity</h5>
                 <h5 class="total">TOTAL</h5>
             </div>
-            `
-    
-            Object.values(cartItems).map(item =>{
-                productContainer.innerHTML += `
+            `;
+
+      Object.values(cartItems).map((item) => {
+        productContainer.innerHTML += `
                 <div class="product">
                     <ion-icon name="close-circle-outline" id="close-button"></ion-icon>
                     <img src="./images/painting${item.id}.jpg">
@@ -34,11 +32,11 @@ export function displayCart() {
                             ${item.inCart}
                     <ion-icon name="add-circle-outline" class="increase-icon" id="increaseIcon"></ion-icon>
                 </div>
-                <div class="total">${item.inCart*item.price},00</div>
+                <div class="total">${item.inCart * item.price},00</div>
                 `;
-            });
-    
-            productContainer.innerHTML += `
+      });
+
+      productContainer.innerHTML += `
                 <div class="cartTotalContainer">
                     <h1 class="cartTotalTitle">
                         TOTAL
@@ -56,7 +54,7 @@ export function displayCart() {
                     </div>
                     
                 </div>
-                `
-        }
+                `;
     }
+  }
 }

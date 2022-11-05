@@ -1,6 +1,6 @@
 function isMinOrder(){
-    let totalCost = parseInt(localStorage.getItem('totalCost'));
-    let minTotalCart = document.querySelector('.min-total-cart');
+    let totalCost = parseInt(localStorage.getItem("totalCost"));
+    let minTotalCart = document.querySelector(".min-total-cart");
 
     if(totalCost < 20 || !totalCost)
     {

@@ -1,15 +1,8 @@
-import { refreshPage } from "./refreshPage.js";
+import { removeAll } from "./removeAll.js";
 
-export function removeEntireCart(){
-    let removeButton = document.querySelector('#removeCart');
-    removeButton.addEventListener('click', () => {
-        console.log(removeButton);
-        removeAll();
-    });
-    
-}
+let removeButton = document.querySelector("#removeCart");
 
-export function removeAll() {
-    localStorage.clear();
-    refreshPage();
-}
+removeButton.addEventListener("click", () => {
+  console.log(removeButton);
+  removeAll();
+});

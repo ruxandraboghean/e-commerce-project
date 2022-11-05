@@ -1,53 +1,50 @@
-import { refreshPage } from './refreshPage.js';
+import { refreshPage } from "./refreshPage.js";
+import { showCartData } from "./showCartData.js";
 
-let increaseButtons = document.querySelectorAll('#increaseIcon');
-console.log( increaseButtons);
-let productsInCart  = localStorage.getItem('paintingsInCart');
-productsInCart      =  Object.values(JSON.parse(productsInCart));
+let increaseButtons = document.querySelectorAll("#increaseIcon");
+console.log(increaseButtons);
+let productsInCart = localStorage.getItem("paintingsInCart");
+productsInCart = Object.values(JSON.parse(productsInCart));
 
-for(let i=0; i < increaseButtons.length; i++)
-{
-    console.log(increaseButtons[i])
-   
+for (let i = 0; i < increaseButtons.length; i++) {
+  console.log(increaseButtons[i]);
 
-   increaseButtons[i].addEventListener('click', ()=>{
-        let products =productsInCart;
-        console.log(products)
-        let updatedProduct = increaseQuantity(products[i]);
-        updateProducts(updatedProduct);
-        refreshPage();
-    }) 
+  increaseButtons[i].addEventListener("click", () => {
+    let products = productsInCart;
+    console.log(products);
+    let updatedProduct = increaseQuantity(products[i]);
+    updateProducts(updatedProduct);
+    showCartData();
+    // refreshPage();
+  });
 }
 function increaseQuantity(product) {
-    console.log(product);
-    product.inCart += 1;
-    cartNumbers();
-    totalCost(product);
-    
-    return product;
-}
-function updateProducts(updatedProduct)
-{
-    console.log(updatedProduct);
-    let newProducts = JSON.stringify(productsInCart);
-    console.log(newProducts)
-    localStorage.setItem('paintingsInCart', newProducts);
-}
-function cartNumbers(){
-    let productNumbers = localStorage.getItem('cartNumbers');
-    
-    productNumbers= parseInt(productNumbers);
-    localStorage.setItem('cartNumbers', productNumbers+1);
+  console.log(product);
+  product.inCart += 1;
+  cartNumbers();
+  totalCost(product);
 
+  return product;
 }
-function totalCost(painting){
-    let cartCost = localStorage.getItem('totalCost');
+function updateProducts(updatedProduct) {
+  console.log(updatedProduct);
+  let newProducts = JSON.stringify(productsInCart);
+  console.log(newProducts);
+  localStorage.setItem("paintingsInCart", newProducts);
+}
+function cartNumbers() {
+  let productNumbers = localStorage.getItem("cartNumbers");
 
-    if(cartCost !== null){
-        cartCost = parseInt(cartCost);
-        localStorage.setItem('totalCost', cartCost + painting.price);
-        
-    } else {
-        localStorage.setItem('totalCost', painting.price);
-    }
+  productNumbers = parseInt(productNumbers);
+  localStorage.setItem("cartNumbers", productNumbers + 1);
+}
+function totalCost(painting) {
+  let cartCost = localStorage.getItem("totalCost");
+
+  if (cartCost !== null) {
+    cartCost = parseInt(cartCost);
+    localStorage.setItem("totalCost", cartCost + painting.price);
+  } else {
+    localStorage.setItem("totalCost", painting.price);
+  }
 }
