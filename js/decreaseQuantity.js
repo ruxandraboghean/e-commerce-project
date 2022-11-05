@@ -1,3 +1,4 @@
+import { isMinOrder } from "./isMinOrder.js";
 import { refreshPage } from "./refreshPage.js";
 import { removeProductWithId } from "./removeFromCart.js";
 import { showCartData } from "./showCartData.js";
@@ -15,6 +16,7 @@ for (let i = 0; i < decreaseButtons.length; i++) {
     console.log(products, "products");
     decreaseQuantity(products[i]);
     showCartData();
+    isMinOrder();
   });
 }
 function decreaseQuantity(product) {

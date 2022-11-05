@@ -1,6 +1,8 @@
+import { isMinOrder } from "./isMinOrder.js";
 import { showCartData } from "./showCartData.js";
 
 let closeButtons = document.querySelectorAll("#close-button");
+console.log(closeButtons, "closeBtn");
 
 for (let i = 0; i < closeButtons.length; i++) {
   let productsInCart = localStorage.getItem("paintingsInCart");
@@ -11,6 +13,8 @@ for (let i = 0; i < closeButtons.length; i++) {
     let id = products[i].id;
 
     removeProductWithId(id, products);
+    showCartData();
+    isMinOrder();
   });
 }
 
@@ -30,13 +34,11 @@ export function removeProductWithId(id, products) {
 
   updateCartNumbers(currentProductNumberInCart);
   updateCartTotal(currentProduct[0]);
-  showCartData();
 }
 
 function updateCartNumbers(decreasedCartNumb) {
   let cartNumb = parseInt(localStorage.getItem("cartNumbers"));
 
-  console.log(cartNumb, "ss");
   cartNumb -= decreasedCartNumb;
   localStorage.setItem("cartNumbers", cartNumb);
 }

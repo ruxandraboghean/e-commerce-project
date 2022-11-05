@@ -1,6 +1,6 @@
-import { showCartData } from "./showCartData.js";
+import { isMinOrder } from "./isMinOrder.js";
 
 export function removeAll() {
   localStorage.clear();
-  showCartData();
+  isMinOrder();
 }

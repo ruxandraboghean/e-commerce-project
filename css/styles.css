@@ -93,13 +93,20 @@ button:active {
     text-align: center;
 }
 
-.grid-container{
-    display: grid;
-    gap: 50px;
-    grid-template-columns: auto auto auto;
+.grid-container {
     padding: 5px;
+    display: flex;
+        flex-direction: row;
+        gap: 50px;
+        max-width: 100%;
 }
 
+@media screen and (max-width:900px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
 .grid-item {
     background-color: rgba(229, 227, 234, 0.8);
     border: 1px solid rgba(223, 221, 229, 0.8);
@@ -107,6 +114,7 @@ button:active {
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    flex: auto;
 }
 
 .img-paintings {
@@ -209,7 +217,6 @@ text-decoration: none;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    /* border-bottom: 1px solid lightgray; */
 }
 .products img {
     width: 75px;

@@ -37,24 +37,23 @@ export function displayCart() {
       });
 
       productContainer.innerHTML += `
-                <div class="cartTotalContainer">
-                    <h1 class="cartTotalTitle">
-                        TOTAL
-                    </h4>
-                    <h4 class="cartTotal">
-                        $${cartCost}
-                    </h4>
+            <div class="cartTotalContainer">
+                <h1 class="cartTotalTitle">
+                    TOTAL
+                </h4>
+                <h4 class="cartTotal">
+                    $${cartCost}
+                </h4>
+            </div>
+            <div class="cart-footer">
+                <div class="remove-cart">
+                    <button id="removeCart"> Empty cart </button>
                 </div>
-                <div class="cart-footer">
-                    <div class="remove-cart">
-                        <button id="removeCart"> Goleste cos </button>
-                    </div>
-                    <div class="place-order">
-                        <button id="placeOrder"> Place order </button>
-                    </div>
-                    
+                <div class="place-order">
+                    <button id="placeOrder"> Place order </button>
                 </div>
-                `;
+            </div>
+            `;
     }
   }
 }
