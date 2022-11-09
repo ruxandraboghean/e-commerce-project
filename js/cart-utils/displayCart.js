@@ -1,13 +1,17 @@
-export function displayCart() {
-  let cartItems = localStorage.getItem("paintingsInCart");
-  let productContainer = document.querySelector(".products");
-  let cartCost = localStorage.getItem("totalCost");
-  let productHeader = document.querySelector(".product-header-cart");
-  cartItems = JSON.parse(cartItems);
+import { decreaseQuantity } from "./decreaseQuantity.js";
+import { removeFromCart } from "./removeFromCart.js";
+import { increaseQuantity } from "./increaseQuantity.js";
+import { placeOrder } from "./placeOrder.js";
+import { removeEntireCart } from "./removeEntireCart.js";
 
-  if (cartItems && productContainer) {
-    if (cartItems.length !== 0) {
-      productContainer.innerHTML = "";
+export const displayCart = () => {
+  let productsInCart = JSON.parse(localStorage.getItem("productsInCart"));
+  let productContainer = document.querySelector(".products");
+  let totalCartCost = localStorage.getItem("totalCost");
+  let productHeader = document.querySelector(".product-header-cart");
+
+  if (productsInCart && productContainer) {
+    if (productsInCart.length !== 0) {
       productHeader.innerHTML = "";
 
       productHeader.innerHTML += `
@@ -19,7 +23,8 @@ export function displayCart() {
             </div>
             `;
 
-      Object.values(cartItems).map((item) => {
+      productContainer.innerHTML = "";
+      Object.values(productsInCart).map((item) => {
         productContainer.innerHTML += `
                 <div class="product">
                     <ion-icon name="close-circle-outline" id="close-button"></ion-icon>
@@ -42,7 +47,7 @@ export function displayCart() {
                     TOTAL
                 </h4>
                 <h4 class="cartTotal">
-                    $${cartCost}
+                    $${totalCartCost}
                 </h4>
             </div>
             <div class="cart-footer">
@@ -55,5 +60,10 @@ export function displayCart() {
             </div>
             `;
     }
+    decreaseQuantity();
+    increaseQuantity();
+    removeFromCart();
+    placeOrder();
+    removeEntireCart();
   }
-}
+};

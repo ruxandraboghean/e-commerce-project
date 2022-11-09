@@ -1,6 +1,6 @@
 import { isMinOrder } from "./isMinOrder.js";
 
-export function removeAll() {
+export const removeAll = () => {
   localStorage.clear();
   isMinOrder();
-}
+};

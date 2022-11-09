@@ -1,11 +1,12 @@
 import { displayCart } from "./displayCart.js";
 
-export function showCartData() {
-  let cartItems = parseInt(localStorage.getItem("cartNumbers"));
+export const showCartData = () => {
+  let cartNumbers = parseInt(localStorage.getItem("cartNumbers"));
+  console.log(cartNumbers);
   let noDataInCart = document.querySelector(".cart-no-data");
   let productContainer = document.querySelector(".products-container");
 
-  if (!cartItems) {
+  if (!cartNumbers) {
     productContainer.innerHTML = "";
 
     noDataInCart.innerHTML += `
@@ -17,4 +18,4 @@ export function showCartData() {
         </div>`;
   }
   displayCart();
-} 
+};

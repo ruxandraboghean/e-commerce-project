@@ -334,3 +334,6 @@ text-decoration: none;
 .place-order {
     text-align: right;
 }
+#index-content {
+    display: none;
+}
