@@ -1,5 +1,6 @@
 import { products } from "./data.js";
 import { addToCart } from "./addToCart.js";
+import { onLoadCartNumbers } from "./onLoadCartNumbers.js";
 
 export function displayProducts() {
   let productItems = document.getElementById("product-container");
@@ -16,4 +17,5 @@ export function displayProducts() {
     )
     .join("");
   addToCart();
+  onLoadCartNumbers();
 }
