@@ -96,7 +96,7 @@ button:active {
 .grid-container {
     padding: 5px;
     display: flex;
-        flex-direction: row;
+    flex-wrap: wrap;
         gap: 50px;
         max-width: 100%;
 }
@@ -105,6 +105,12 @@ button:active {
     .grid-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        }
+        
+        .img-paintings {
+            width: 150px;
+            height: 200px;
     }
 }
 .grid-item {
@@ -115,11 +121,14 @@ button:active {
     font-size: 30px;
     text-align: center;
     flex: auto;
+    display: inline-block;
+        width: 25%;
 }
 
 .img-paintings {
     border: 1px solid #c7bdc8;
 }
+
 .painting-description {
     display: block;
     width: 400px;
