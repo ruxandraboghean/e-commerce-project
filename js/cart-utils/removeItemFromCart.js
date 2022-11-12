@@ -5,6 +5,7 @@ export const removeItemFromCart = (productId, products) => {
   let updatedProductsInCart = products.filter(
     (product) => product.id !== productId
   );
+
   let currentProducts = Object.values(
     JSON.parse(localStorage.getItem("productsInCart"))
   );
@@ -12,9 +13,34 @@ export const removeItemFromCart = (productId, products) => {
     (product) => product.id === productId
   );
   let decreasedCartNumb = removedProducts[0].inCart;
+  console.log(updatedProductsInCart.length, "length");
 
-  localStorage.setItem("productsInCart", JSON.stringify(updatedProductsInCart));
+  if (updatedProductsInCart.length !== 0) {
+    const mappedProducts = new Map();
+    for (let prod of updatedProductsInCart) {
+      mappedProducts.set([prod.id], prod);
+    }
 
+    let mappedProductsReformat = [];
+    for (let [key, value] of mappedProducts) {
+      mappedProductsReformat = {
+        ...mappedProductsReformat,
+        [key]: value,
+      };
+    }
+
+    localStorage.setItem(
+      "productsInCart",
+      JSON.stringify(mappedProductsReformat)
+    );
+  } else {
+    debugger;
+    console.log(updatedProductsInCart, "update");
+    localStorage.setItem(
+      "productsInCart",
+      JSON.stringify(updatedProductsInCart)
+    );
+  }
   updateCartNumbers(decreasedCartNumb);
   updateCartTotal(removedProducts[0]);
 };

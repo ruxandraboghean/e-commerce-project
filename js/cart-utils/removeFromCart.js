@@ -11,7 +11,6 @@ export const removeFromCart = () => {
   for (let i = 0; i < closeButtons.length; i++) {
     closeButtons[i].addEventListener("click", () => {
       let productId = productsInCart[i].id;
-      console.log(productId);
 
       removeItemFromCart(productId, productsInCart);
       showCartData();

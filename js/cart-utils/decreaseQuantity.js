@@ -1,5 +1,6 @@
+import { decreaseQtyInLS } from "./decreaseQtyInLS.js";
 import { isMinOrder } from "./isMinOrder.js";
-import { removeItemFromCart } from "./removeItemFromCart.js";
+
 import { showCartData } from "./showCartData.js";
 
 export const decreaseQuantity = () => {
@@ -17,25 +18,3 @@ export const decreaseQuantity = () => {
     });
   }
 };
-
-function decreaseQtyInLS(product, productsInCart) {
-  let productNumbers = parseInt(localStorage.getItem("cartNumbers"));
-
-  if (product.inCart === 1) {
-    removeItemFromCart(product.id, productsInCart);
-  } else {
-    product.inCart -= 1;
-
-    localStorage.setItem("cartNumbers", productNumbers - 1);
-    totalCost(product);
-    localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
-  }
-}
-
-function totalCost(painting) {
-  let cartCost = parseInt(localStorage.getItem("totalCost"));
-
-  if (cartCost !== null) {
-    localStorage.setItem("totalCost", cartCost - painting.price);
-  }
-}
