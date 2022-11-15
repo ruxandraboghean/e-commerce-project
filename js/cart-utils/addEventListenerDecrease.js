@@ -1,6 +1,5 @@
 import { decreaseQtyInLS } from "./decreaseQtyInLS.js";
 import { isMinOrder } from "./isMinOrder.js";
-
 import { showCartData } from "./showCartData.js";
 
 export const decreaseQuantity = () => {
@@ -11,6 +10,7 @@ export const decreaseQuantity = () => {
 
   for (let i = 0; i < decreaseButtons.length; i++) {
     let updatedProducts = productsInCart;
+
     decreaseButtons[i].addEventListener("click", () => {
       decreaseQtyInLS(updatedProducts[i], productsInCart);
       showCartData();

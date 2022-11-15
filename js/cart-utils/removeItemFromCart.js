@@ -1,4 +1,4 @@
-import { updateCartTotal } from "./updateCartTotal.js";
+import { updateItemRemovedTotal } from "./updateItemRemovedTotal.js";
 import { updateCartNumbers } from "./updateCartNumbers.js";
 
 export const removeItemFromCart = (productId, products) => {
@@ -13,7 +13,6 @@ export const removeItemFromCart = (productId, products) => {
     (product) => product.id === productId
   );
   let decreasedCartNumb = removedProducts[0].inCart;
-  console.log(updatedProductsInCart.length, "length");
 
   if (updatedProductsInCart.length !== 0) {
     const mappedProducts = new Map();
@@ -34,13 +33,11 @@ export const removeItemFromCart = (productId, products) => {
       JSON.stringify(mappedProductsReformat)
     );
   } else {
-    debugger;
-    console.log(updatedProductsInCart, "update");
     localStorage.setItem(
       "productsInCart",
       JSON.stringify(updatedProductsInCart)
     );
   }
   updateCartNumbers(decreasedCartNumb);
-  updateCartTotal(removedProducts[0]);
+  updateItemRemovedTotal(removedProducts[0]);
 };

@@ -9,9 +9,9 @@ export const removeFromCart = () => {
   );
 
   for (let i = 0; i < closeButtons.length; i++) {
-    closeButtons[i].addEventListener("click", () => {
-      let productId = productsInCart[i].id;
+    let productId = productsInCart[i].id;
 
+    closeButtons[i].addEventListener("click", () => {
       removeItemFromCart(productId, productsInCart);
       showCartData();
       isMinOrder();

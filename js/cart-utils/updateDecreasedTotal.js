@@ -1,4 +1,4 @@
-export const updateTotalCost = (product) => {
+export const updateDecreasedTotal = (product) => {
   let cartCost = parseInt(localStorage.getItem("totalCost"));
 
   if (cartCost !== null) {

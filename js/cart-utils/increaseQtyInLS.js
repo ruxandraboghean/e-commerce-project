@@ -1,4 +1,4 @@
-import { updateTotalCart } from "../index-utils/updateTotalCart.js";
+import { updateTotalCart } from "../index-utils/updateIncreasedTotal.js";
 
 export const increaseQtyInLS = (product) => {
   let productNumbers = parseInt(localStorage.getItem("cartNumbers")) || 0;
@@ -14,6 +14,7 @@ export const increaseQtyInLS = (product) => {
     productsInCart[product.id].inCart += 1;
   }
 
-  localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
   updateTotalCart(product);
+
+  localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
 };

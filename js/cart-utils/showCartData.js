@@ -2,7 +2,6 @@ import { displayCart } from "./displayCart.js";
 
 export const showCartData = () => {
   let cartNumbers = parseInt(localStorage.getItem("cartNumbers"));
-  console.log(cartNumbers);
   let noDataInCart = document.querySelector(".cart-no-data");
   let productContainer = document.querySelector(".products-container");
 

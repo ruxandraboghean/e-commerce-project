@@ -9,9 +9,9 @@ export const increaseQuantity = () => {
   );
 
   for (let i = 0; i < increaseButtons.length; i++) {
+    let products = productsInCart;
+
     increaseButtons[i].addEventListener("click", () => {
-      let products = productsInCart;
-      console.log(products);
       increaseQtyInLS(products[i]);
       showCartData();
       isMinOrder();

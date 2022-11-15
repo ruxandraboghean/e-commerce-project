@@ -1,4 +1,4 @@
-export const updateCartTotal = (currentProduct) => {
+export const updateItemRemovedTotal = (currentProduct) => {
   let currentProductTotal = currentProduct.price * currentProduct.inCart;
   let updatedTotal = parseInt(localStorage.getItem("totalCost"));
 

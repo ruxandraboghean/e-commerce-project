@@ -1,6 +1,6 @@
-import { decreaseQuantity } from "./decreaseQuantity.js";
-import { removeFromCart } from "./removeFromCart.js";
-import { increaseQuantity } from "./increaseQuantity.js";
+import { decreaseQuantity } from "./addEventListenerDecrease.js";
+import { removeFromCart } from "./addEventListenerRemove.js";
+import { increaseQuantity } from "./addEventListenerIncrease.js";
 import { placeOrder } from "./placeOrder.js";
 import { removeEntireCart } from "./removeEntireCart.js";
 

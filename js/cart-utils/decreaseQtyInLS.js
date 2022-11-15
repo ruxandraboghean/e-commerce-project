@@ -1,4 +1,4 @@
-import { updateTotalCost } from "./updateTotalCost.js";
+import { updateDecreasedTotal } from "./updateDecreasedTotal.js";
 import { removeItemFromCart } from "./removeItemFromCart.js";
 
 export const decreaseQtyInLS = (product, products) => {
@@ -14,7 +14,9 @@ export const decreaseQtyInLS = (product, products) => {
       [product.id]: product,
     };
     productsInCart[product.id].inCart -= 1;
-    updateTotalCost(product);
+
+    updateDecreasedTotal(product);
+
     localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
   }
 };
