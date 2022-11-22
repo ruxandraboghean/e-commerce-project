@@ -6,28 +6,31 @@ import { removeEntireCart } from "./removeEntireCart.js";
 
 export const displayCart = () => {
   let productsInCart = JSON.parse(localStorage.getItem("productsInCart"));
-  let productContainer = document.querySelector(".products");
+  //   let productContainer = document.querySelector(".products");
+  let productContainer = $(".products");
   let totalCartCost = localStorage.getItem("totalCost");
-  let productHeader = document.querySelector(".product-header-cart");
+  //   let productHeader = document.querySelector(".product-header-cart");
+  let productHeader = $(".product-header-cart");
 
   if (productsInCart && productContainer) {
     if (productsInCart.length !== 0) {
-      productHeader.innerHTML = "";
+      productHeader.html("");
 
-      productHeader.innerHTML += `
+      productHeader.append(`
             <div class="product-header">
                 <h5 class="product-name">Product Name</h5>
                 <h5 class="product-price-cart">Price</h5>
                 <h5 class="quantity">Quantity</h5>
                 <h5 class="total">TOTAL</h5>
             </div>
-            `;
+            `);
 
-      productContainer.innerHTML = "";
+      productContainer.html("");
       Object.values(productsInCart).map((item) => {
-        productContainer.innerHTML += `
+        // debugger;
+        productContainer.append(`
                 <div class="product">
-                    <ion-icon name="close-circle-outline" id="close-button"></ion-icon>
+                    <ion-icon name="close-circle-outline" class="close-button" id="close-button"></ion-icon>
                     <img src="./images/painting${item.id}.jpg">
                     <span class="product-name">${item.name} </span>
                 </div>
@@ -38,10 +41,10 @@ export const displayCart = () => {
                     <ion-icon name="add-circle-outline" class="increase-icon" id="increaseIcon"></ion-icon>
                 </div>
                 <div class="total">${item.inCart * item.price},00</div>
-                `;
+                `);
       });
 
-      productContainer.innerHTML += `
+      productContainer.append(`
             <div class="cartTotalContainer">
                 <h1 class="cartTotalTitle">
                     TOTAL
@@ -58,7 +61,7 @@ export const displayCart = () => {
                     <button id="placeOrder"> Place order </button>
                 </div>
             </div>
-            `;
+            `);
     }
     decreaseQuantity();
     increaseQuantity();

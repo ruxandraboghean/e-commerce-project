@@ -3,9 +3,9 @@ import { removeAll } from "./removeAll.js";
 import { showCartData } from "./showCartData.js";
 
 export const removeEntireCart = () => {
-  let removeButton = document.querySelector("#removeCart");
+  let removeButton = $("#removeCart");
 
-  removeButton.addEventListener("click", () => {
+  $(removeButton).click(() => {
     removeAll();
     showCartData();
     isMinOrder();
