@@ -10,6 +10,7 @@ export const removeFromCart = () => {
 
   for (let i = 0; i < closeButtons.length; i++) {
     let productId = productsInCart[i].id;
+
     $(closeButtons[i]).click(() => {
       removeItemFromCart(productId, productsInCart);
       showCartData();

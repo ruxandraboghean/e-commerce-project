@@ -6,10 +6,8 @@ import { removeEntireCart } from "./removeEntireCart.js";
 
 export const displayCart = () => {
   let productsInCart = JSON.parse(localStorage.getItem("productsInCart"));
-  //   let productContainer = document.querySelector(".products");
-  let productContainer = $(".products");
   let totalCartCost = localStorage.getItem("totalCost");
-  //   let productHeader = document.querySelector(".product-header-cart");
+  let productContainer = $(".products");
   let productHeader = $(".product-header-cart");
 
   if (productsInCart && productContainer) {
@@ -27,7 +25,6 @@ export const displayCart = () => {
 
       productContainer.html("");
       Object.values(productsInCart).map((item) => {
-        // debugger;
         productContainer.append(`
                 <div class="product">
                     <ion-icon name="close-circle-outline" class="close-button" id="close-button"></ion-icon>
