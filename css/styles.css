@@ -1,348 +1,217 @@
-body{
-    background-color: #ebe6f1;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+@import url(./cart.css);
+
+body {
+  background-color: #ebe6f1;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 p {
-    font-size:20px;
-    margin-left:30px;
+  font-size: 20px;
 }
 
-h1{
-    color:#311656;
-    text-align: center;
-    font-size: 30px;
+h1 {
+  color: #311656;
+  text-align: center;
+  font-size: 30px;
 }
 
 h3 {
-    box-sizing: border-box;
-    text-align: center;
-    color: rgb(34, 23, 39);
-    display: inline;
-    padding-bottom: 20px;
-    padding-left: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  color: rgb(34, 23, 39);
+  display: inline;
+  padding-bottom: 20px;
+  padding-left: 5px;
 }
 
 .price {
-    font-size: 16px;
+  font-size: 16px;
 }
 .name {
-    color: #311656;
-    font-size: 18px;
+  color: #311656;
+  font-size: 18px;
 }
 
-h5{
-    font-family: cursive;
-    font-weight: 300;
-    margin: 5% auto;
+h5 {
+  font-family: cursive;
+  font-weight: 300;
+  margin: 5% auto;
 }
 
-h6{
-    font-size: 16px;
-    font-weight: 200;
-    margin: 5% auto;
+h6 {
+  font-size: 16px;
+  font-weight: 200;
+  margin: 5% auto;
 }
 
 button {
-    display: inline-block;
-    padding: 10px 25px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #9f9fb7;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 2px rgb(118, 110, 123);
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #9f9fb7;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px rgb(118, 110, 123);
 }
 .back-button {
-    margin-left: 30px;
-    display: inline-block;
-    font-size: 10px;
-    cursor: pointer;
-    color: #fff;
-    background-color: #9f9fb7;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px rgb(135, 127, 140);
+  margin-left: 30px;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #9f9fb7;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px rgb(135, 127, 140);
 }
-.back-button:active{
-    background-color: none;
-    box-shadow: none;
-    transform: none;
+.back-button:active {
+  background-color: none;
+  box-shadow: none;
+  transform: none;
 }
 
-button:hover {background-color: #4d4971}
+button:hover {
+  background-color: #4d4971;
+}
 
 button:active {
-    background-color: #39383d;
-    box-shadow: 0 2px rgb(130, 125, 132);
-    transform: translateY(4px);
+  background-color: #39383d;
+  box-shadow: 0 2px rgb(130, 125, 132);
+  transform: translateY(4px);
 }
 
-.container-item{
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
+.container-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }
 .header {
-    margin-bottom: 20px;
-    height: 30px;
-    text-align: center;
+  margin-bottom: 20px;
+  height: 30px;
+  text-align: center;
 }
 
 .grid-container {
-    padding: 5px;
-    display: flex;
-    flex-wrap: wrap;
-        gap: 50px;
-        max-width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 100%;
 }
 
-@media screen and (max-width:900px) {
-    .grid-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        }
-        
-        .img-paintings {
-            width: 150px;
-            height: 200px;
-    }
+@media screen and (max-width: 900px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-paintings {
+    width: 150px;
+    height: 200px;
+  }
 }
 .grid-item {
-    background-color: rgba(229, 227, 234, 0.8);
-    border: 1px solid rgba(223, 221, 229, 0.8);
-    border-radius: 10px;
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-    flex: auto;
-    display: inline-block;
-        width: 25%;
+  background-color: rgba(229, 227, 234, 0.8);
+  border: 1px solid rgba(223, 221, 229, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  flex: auto;
+  display: inline-block;
 }
 
 .img-paintings {
-    border: 1px solid #c7bdc8;
+  border: 1px solid #c7bdc8;
 }
 
 .painting-description {
-    display: block;
-    width: 400px;
-    height: 160px;
-    background: lightgray;
+  display: block;
+  width: 400px;
+  height: 160px;
+  background: lightgray;
 }
 
-.headline{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 45px;
-    box-sizing: border-box;
-    color: rgb(64, 54, 73);
-    line-height: 1.4em;
-    margin-bottom: 15px; 
-    display: block;
-    margin: 0 auto 15px;
+.headline {
+  font-family: "Trebuchet MS";
+  font-size: 2rem;
+  box-sizing: border-box;
+  color: rgb(64, 54, 73);
+  margin-bottom: 2rem;
+  display: block;
+  margin: 0 auto;
 }
-.devider{
-    border-right: 2px solid #bfb8cc;
+.devider {
+  border-right: 2px solid #bfb8cc;
 }
-.cart{
-    text-align: left;
-    margin:10px
+.cart {
+  text-align: left;
+  margin: 10px;
 }
 .cart-header {
-    padding: 10px;
+  padding: 10px;
 }
 .cart-content {
-    font-size: 14px;
-    text-align: left;
+  font-size: 14px;
+  text-align: left;
 }
 .cart-empty-text {
-    margin: 0 auto;
-    padding-bottom: 20px;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
 
-.no-data{
-    max-width: 1000px;
-    height: 200px;
-    border: 1px solid rgb(190, 185, 193);
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
+.no-data {
+  max-width: 1000px;
+  height: 200px;
+  border: 1px solid rgb(190, 185, 193);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 .img-empty-cart {
-    opacity: 0.1;
-    margin: 0;
-    padding-top: 50px;
+  opacity: 0.1;
+  margin: 0;
+  padding-top: 50px;
 }
 
 .navbar {
-    background-color: #dedce299;
-    text-transform: none;
-    padding: 30px 40px;
-    text-align: center;
-    float: none;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 10px;
-    border-radius: 10px;
+  background-color: #dedce299;
+  text-transform: none;
+  padding: 30px 40px;
+  text-align: center;
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 .float-right {
-   float: right;
+  float: right;
 }
-.float-left{
-    float:left;
+.float-left {
+  float: left;
 }
 .badge {
-    padding-left: 9px;
-    padding-right: 9px;
-    border-radius: 9px;
-  }
+  padding-left: 9px;
+  padding-right: 9px;
+  border-radius: 9px;
+}
 #lblCartCount {
-    font-size: 12px;
-    background: #4fadb8;
-    color: #fff;
-    padding: 0 5px;
-    vertical-align: top;
-    margin-left: -10px; 
+  font-size: 12px;
+  background: #4fadb8;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -10px;
 }
 .decoration-none {
-text-decoration: none;
-}
-
-/*Cart styles */
-
-.products-container{
-    max-width: 1000px;
-    justify-content: space-around;
-    margin: 0 20%;
-    margin-top: 15px;
-}
-.products{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-.products img {
-    width: 75px;
-}
-.product {
-    width: 45%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-  }
-  .product-header-cart {
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    justify-content: flex-start;
-    margin: 0 auto;
-}
-
-.product-header{
-    border-bottom: 4px solid rgb(196, 171, 203);
-    font-size: 20px;
-    text-align: center;
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    justify-content: flex-start;
-    margin: 0 auto;
-}
-.product-name{
-    width:45%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-}
-.product-price-cart {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 15%;
-    display: flex;
-    align-items: center;
-}
-.quantity {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 30%;
-    display: flex;
-    align-items: center;
-}
-.total {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 10%;
-    display: flex;
-    align-items: center;
-}
-.cartTotalContainer{
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    padding: 10px 0;
-}
-.cartTotalTitle {
-    width:30%;
-}
-.cartTotal {
-    width: 10%;
-    font-size: 20px;
-}
-.cart-no-data {
-    justify-content: space-around;
-    margin: 0 20%;
-    margin-top: 15px;
-    max-width: 1000px;
-}
-#close-button {
-    cursor: pointer;
-    width: 30px;
-    height: 20px;
-    color:rgb(117, 15, 15);
-}
-.min-total-cart {
-    margin: 0 20%;
-    margin-top: 5%;
-    max-width: 1000px;
-}
-.img-min-order {
-    transform: rotate(270deg);
-    float: left;
-}
-.txt-min-order {
-   padding-left: 20px;
-}
-.decrease-icon {
-    cursor: pointer;
-    padding: 0 10px;
-    width: 18px;
-    height: 18px;
-    color:rgb(67, 54, 99)
-}
-
-.increase-icon {
-    cursor: pointer;
-    padding: 0 10px;
-    width: 18px;
-    height: 18px;
-    color:rgb(67, 54, 99)
-}
-
-.cart-footer{
-    display: grid;
-    gap: 50px;
-    grid-template-columns: auto auto;
-    padding: 5px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.place-order {
-    text-align: right;
-}
-#index-content {
-    display: none;
+  text-decoration: none;
 }
