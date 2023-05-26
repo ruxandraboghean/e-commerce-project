@@ -16,7 +16,7 @@ export const displayCart = () => {
 
       productHeader.append(`
             <div class="product-header">
-                <h5 class="product-name">Product Name</h5>
+                <h5 class="product-name">Product</h5>
                 <h5 class="product-price-cart">Price</h5>
                 <h5 class="quantity">Quantity</h5>
                 <h5 class="total">TOTAL</h5>
